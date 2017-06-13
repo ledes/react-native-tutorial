@@ -18,7 +18,7 @@ class Blink extends Component {
   render() {
     let display = this.state.showText ? this.props.text : ' ';
     return (
-      <Text>{display}</Text>
+      <Text style={this.props.style}>{display}</Text>
     );
   }
 }
@@ -27,10 +27,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Blink text='I love to blink' />
-        <Blink text='Yes blinking is so great' />
-        <Blink text='Why did they ever take this out of HTML' />
-        <Blink text='Look at me look at me look at me' />
+        <Blink style={styles.red} text='I love to blink' />
+        <Blink style={styles.bigblue} text='Yes blinking is so great' />
+        <Blink style={styles.red} text='Why did they ever take this out of HTML' />
+        <Blink style={styles.bigblue} text='Look at me look at me look at me' />
       </View>
     );
   }
@@ -43,4 +43,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red',
+  }
 });
