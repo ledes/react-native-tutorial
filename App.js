@@ -18,7 +18,9 @@ class Blink extends Component {
   render() {
     let display = this.state.showText ? this.props.text : ' ';
     return (
-      <Text style={this.props.style}>{display}</Text>
+      <View style={this.props.styleView}>
+        <Text style={this.props.styleText}>{display}</Text>
+      </View>
     );
   }
 }
@@ -27,10 +29,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Blink style={styles.red} text='I love to blink' />
-        <Blink style={styles.bigblue} text='Yes blinking is so great' />
-        <Blink style={styles.red} text='Why did they ever take this out of HTML' />
-        <Blink style={styles.bigblue} text='Look at me look at me look at me' />
+        <Blink styleText={styles.redBoxText} styleView={styles.redBoxView} text='I love to blink' />
+        <Blink styleText={styles.blueBoxText} styleView={styles.blueBoxView} text='Yes blinking is so great' />
+        <Blink styleText={styles.redBoxText} styleView={styles.redBoxView} text='Why did they ever take this out of HTML' />
+        <Blink styleText={styles.blueBoxText} styleView={styles.blueBoxView} text='Look at me look at me look at me' />
       </View>
     );
   }
@@ -43,12 +45,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  bigblue: {
+  blueBoxView: {
+    width: 350,
+    height: 150,
+    backgroundColor: 'powderblue'
+  },
+  blueBoxText: {
+    textAlign: 'center',
+    width: 250,
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 30,
   },
-  red: {
+  redBoxView: {
+    width: 150,
+    height: 80,
+    backgroundColor: 'steelblue'
+  },
+  redBoxText: {
     color: 'red',
   }
 });
