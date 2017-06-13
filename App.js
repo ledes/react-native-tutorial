@@ -32,7 +32,6 @@ export default class App extends React.Component {
         <Blink styleText={styles.redBoxText} styleView={styles.redBoxView} text='I love to blink' />
         <Blink styleText={styles.blueBoxText} styleView={styles.blueBoxView} text='Yes blinking is so great' />
         <Blink styleText={styles.redBoxText} styleView={styles.redBoxView} text='Why did they ever take this out of HTML' />
-        <Blink styleText={styles.blueBoxText} styleView={styles.blueBoxView} text='Look at me look at me look at me' />
       </View>
     );
   }
@@ -46,20 +45,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   blueBoxView: {
-    width: 350,
-    height: 150,
+    flex: 1,
     backgroundColor: 'powderblue'
   },
   blueBoxText: {
     textAlign: 'center',
-    width: 250,
     color: 'blue',
     fontWeight: 'bold',
     fontSize: 30,
   },
   redBoxView: {
-    width: 150,
-    height: 80,
+    flex: 3,
     backgroundColor: 'steelblue'
   },
   redBoxText: {
